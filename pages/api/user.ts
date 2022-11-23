@@ -2,7 +2,7 @@ import  prisma  from "../../lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Prisma } from "@prisma/client";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method !== 'POST'){
         return res.status(400).json( { message: "Only POST allowed"});
     }
@@ -16,3 +16,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
 }
+
+export default handler;
