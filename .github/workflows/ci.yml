@@ -1,0 +1,29 @@
+name: CI
+on: 
+  push:
+    branches: [main, test]
+  pull_request:
+    branches: [main, test]
+
+jobs:
+  run-linters:
+    name: Lint & Format Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          cache: 'yarn'
+
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+
+      - name: Typecheck
+        run: yarn type-check
+
+      - name: Lint
+        run: yarn lint:force

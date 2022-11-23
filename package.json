@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --ignore-path .prettierignore --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint:force": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
