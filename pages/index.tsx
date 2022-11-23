@@ -28,7 +28,7 @@ const Home = ({ initialUsers }: {initialUsers: User[]}) => {
           <Grid.Col span={8} style={{ width: '100%', height: '100%' }}>
           <Stack align={"center"} justify={"center"} style={{ width: '100%', height: '100%' }}>
             {users?.map((user, index) => 
-              <UserComp id={user.id} firstName={user.firstName} lastName={1} avatar={user.avatar} email={user.email} key={index+'avc'} />
+              <UserComp id={user.id} firstName={user.firstName} lastName={user.lastName} avatar={user.avatar} email={user.email} key={index+'avc'} />
             )}
           </Stack>
         </Grid.Col>
